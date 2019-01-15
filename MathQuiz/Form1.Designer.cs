@@ -28,13 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.timeLeftLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(570, 9);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(200, 30);
+            this.timeLabel.TabIndex = 0;
+            // 
+            // timeLeftLabel
+            // 
+            this.timeLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLeftLabel.Location = new System.Drawing.Point(464, 9);
+            this.timeLeftLabel.Name = "timeLeftLabel";
+            this.timeLeftLabel.Size = new System.Drawing.Size(150, 30);
+            this.timeLeftLabel.TabIndex = 1;
+            this.timeLeftLabel.Text = "Time Left:";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.timeLeftLabel);
+            this.Controls.Add(this.timeLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "ErikMartinez\'sMathQuiz";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label timeLeftLabel;
     }
 }
 
