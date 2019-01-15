@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace MathQuiz
 {
     public partial class Form1 : Form
-    {
+    {        
         // Create a Random object called randomizer
         // to generate random numbers.
         Random randomizer = new Random();
@@ -42,6 +42,8 @@ namespace MathQuiz
         /// </summary>
         public void StartTheQuiz()
         {
+            currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+
             // Fill in the addition problem.
             // Generate two random numbers to add.
             // Store the values in the variables 'addend1' and 'addend2'.
