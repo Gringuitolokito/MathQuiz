@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\applause7.wav" />
+    <Content Include="bin\Debug\chord.wav" />
+    <Content Include="bin\Debug\tada.wav" />
+    <Content Include="bin\Debug\Wrong-answer-sound-effect.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -96,6 +97,59 @@ namespace MathQuiz
            
         }
 
+        private void difference_ValueChanged(object sender, EventArgs e)
+        {
+            SoundPlayer rightSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\tada.wav");
+
+            if (timeLeft > 1)
+            {
+                if (minuend - subtrahend == difference.Value)
+                {
+                    rightSound.Play();
+                }
+            }
+           
+        }
+
+        private void sum_ValueChanged(object sender, EventArgs e)
+        {
+            SoundPlayer rightSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\tada.wav");
+
+            if (timeLeft > 1)
+            {
+                if (addend1 + addend2 == sum.Value)
+                {
+                    rightSound.Play();
+                }
+            }
+        }
+
+        private void product_ValueChanged(object sender, EventArgs e)
+        {
+            SoundPlayer rightSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\tada.wav");
+
+            if (timeLeft > 1)
+            {
+                if (multiplicand * multiplier == product.Value)
+                {
+                    rightSound.Play();
+                }
+            }
+        }
+
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+            SoundPlayer rightSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\tada.wav");
+
+            if (timeLeft > 1)
+            {
+                if (dividend / divisor == quotient.Value)
+                {
+                    rightSound.Play();
+                }
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CheckTheAnswer())
@@ -104,6 +158,8 @@ namespace MathQuiz
                 // got the answer right. Stop the timer  
                 // and show a MessageBox.
                 timer1.Stop();
+                SoundPlayer congratsSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\applause7.wav");
+                congratsSound.Play();
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
@@ -116,12 +172,24 @@ namespace MathQuiz
                 // Time Left label.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " seconds";
+
+                // If staement to change background color
+                if (timeLeft <= 5)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
+                else
+                {
+                    timeLabel.BackColor = Color.Transparent;
+                }
             }
             else
             {
                 // If the user ran out of time, stop the timer, show 
                 // a MessageBox, and fill in the answers.
-                timer1.Stop();
+                SoundPlayer outOfTimeSound = new SoundPlayer(@"C:\Users\ErikM\Documents\GitHub\MathQuiz\MathQuiz\bin\Debug\Wrong-answer-sound-effect.wav");
+                outOfTimeSound.Play();
+                timer1.Stop();               
                 timeLabel.Text = "Time's up!";
                 MessageBox.Show("You didn't finish in time.", "Sorry");
                 sum.Value = addend1 + addend2;
