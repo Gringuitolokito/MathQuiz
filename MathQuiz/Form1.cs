@@ -43,7 +43,7 @@ namespace MathQuiz
         /// </summary>
         public void StartTheQuiz()
         {
-            currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            
 
             // Fill in the addition problem.
             // Generate two random numbers to add.
@@ -230,6 +230,7 @@ namespace MathQuiz
         public Form1()
         {
             InitializeComponent();
+            currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
         }
     }
 }
